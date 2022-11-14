@@ -1,0 +1,10 @@
+.start-node {
+    background-color: rgb(21, 131, 94);
+    border: 2px black solid;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

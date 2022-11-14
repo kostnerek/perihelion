@@ -1,0 +1,66 @@
+.menu {
+    position: absolute;
+    z-index: 99;
+    background-color: #494454;
+    height: 70%;
+    margin-top: 9vh;
+    width: 7%;
+    margin-left: 2%;
+    border-radius: 100px;
+}
+
+.box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+}
+
+.logo {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.side-menu {
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: none;
+    position: absolute;
+    width: 30vw;
+    height: 70%;
+    top: 9vh;
+    background-color: #766F87;
+    margin: 0;
+    margin-left: 5%;
+    z-index: 98;
+    box-sizing: border-box;
+    border: #494454 1vh solid;
+}
+
+.show {
+    display: block;
+}
+
+.menu-items {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu-item {
+    color: #fff;
+    font-size: 5vh;
+    font-weight: bolder;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.menu-item:hover {
+    background-color: #494454;
+    border-radius: 50px;
+}
