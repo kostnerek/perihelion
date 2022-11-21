@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { getBezierPath } from "reactflow";
 import { Icon } from "@iconify/react";
-import NodesContext from "../../context/NodesContext";
+import NodesContext from "../../context/NodesContext.js";
 import "./index.css";
 
 const foreignObjectSize = 40;

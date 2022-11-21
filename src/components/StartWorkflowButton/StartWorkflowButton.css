@@ -1,0 +1,23 @@
+.start-workflow {
+    width: 10vh;
+    height: 4vh;
+    position: absolute;
+    z-index: 97;
+    bottom: 2%;
+    left: 50%;
+    background-color: #766f87;
+    border: #494454 solid 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5vh;
+    font-size: 1.5em;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+    transition: 0.2s;
+    color: #fff;
+}
+.start-workflow:hover {
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+    cursor: pointer;
+}

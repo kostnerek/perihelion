@@ -1,31 +1,34 @@
 import { useState } from 'react';
 import { useNodesState, useEdgesState } from 'reactflow';
 
-import NodesContext from './context/NodesContext';
+import NodesContext from './context/NodesContext.js';
 
-import EdgeButton from './components/EdgeButton/EdgeButton';
-import CustomNode from './components/CustomNode/CustomNode';
-import StartNode from './components/StartNode/StartNode';
+import EdgeButton from './components/EdgeButton/EdgeButton.jsx';
 
-import NodeCreator from './components/NodeCreator/NodeCreator';
+import StartNode from './components/StartNode/StartNode.jsx';
+import NodeCreator from './components/NodeCreator/NodeCreator.jsx';
+import AddImageNode from './components/AddImageNode/AddImageNode.jsx';
 
-import Backboard from './containers/Backboard/Backboard';
-import Menu from './containers/Menu/Menu';
 
-import {nodes as initialNodes, edges as initialEdges} from './containers/Backboard/initial-element';
+import Backboard from './containers/Backboard/Backboard.jsx';
+import Menu from './containers/Menu/Menu.jsx';
+
+import {nodes as initialNodes, edges as initialEdges} from './containers/Backboard/initial-element.js';
+import { StartWorkflowButton } from './components/StartWorkflowButton/StartWorkflowButton.jsx';
 
 function App() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     const [nodeTypes, setNodeTypes] = useState({
-        custom: CustomNode,
         start: StartNode,
         gaussian: NodeCreator,
         uniform: NodeCreator,
+        addImage: AddImageNode
     });
     const [edgeTypes, setEdgeTypes] = useState({
         edgebutton: EdgeButton
     });
+    const [workflow, setWorkflow] = useState("test");
 
     return (
         <NodesContext.Provider value={{
@@ -38,10 +41,13 @@ function App() {
             nodeTypes,
             setNodeTypes,
             edgeTypes,
-            setEdgeTypes
+            setEdgeTypes,
+            workflow,
+            setWorkflow
         }}>
             <div>
                 <Menu />
+                <StartWorkflowButton />
                 <Backboard />
             </div>
         </NodesContext.Provider>
@@ -49,3 +55,10 @@ function App() {
 }
 
 export default App;
+
+/* 
+
+npm link
+build-opencv --incDir /usr/include/opencv4/ --libDir /lib/x86_64-linux-gnu/ --binDir=/usr/bin/ --nobuild rebuild
+
+*/

@@ -1,18 +1,10 @@
 import React, { useCallback, useContext } from "react";
-import ReactFlow, {
-    addEdge,
-    MiniMap,
-    Controls,
-    Background,
-    useEdgesState,
-} from "reactflow";
-
-import CustomNode from "../../components/CustomNode/CustomNode";
+import ReactFlow, { addEdge, MiniMap, Controls, Background } from "reactflow";
 
 import "reactflow/dist/style.css";
 import "./backboard.css";
 
-import NodesContext from "../../context/NodesContext";
+import NodesContext from "../../context/NodesContext.js";
 
 const minimapStyle = {
     height: 120,

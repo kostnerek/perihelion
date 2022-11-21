@@ -12,6 +12,8 @@ function createWindow() {
     // communicate between the node-land and the browser-land.
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: true,
+      webSecurity: false,
     },
   });
 
@@ -51,7 +53,9 @@ function setupLocalFilesNormalizerProxy() {
 // This method will be called when Electron has finished its initialization and
 // is ready to create the browser windows.
 // Some APIs can only be used after this event occurs.
+
 app.whenReady().then(() => {
+  app.allowRendererProcessReuse = false;
   createWindow();
   setupLocalFilesNormalizerProxy();
 
@@ -85,6 +89,7 @@ app.on("web-contents-created", (event, contents) => {
     }
   });
 });
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

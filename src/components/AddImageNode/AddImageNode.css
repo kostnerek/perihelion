@@ -1,0 +1,20 @@
+.add-image-node{
+    background-color: rgb(95, 95, 95);
+    border: 2px black solid;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-status>img {
+    width: 50%;
+}
+.image-status, .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
