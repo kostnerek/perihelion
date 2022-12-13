@@ -17,12 +17,13 @@ import {nodes as initialNodes, edges as initialEdges} from './containers/Backboa
 import { StartWorkflowButton } from './components/StartWorkflowButton/StartWorkflowButton.jsx';
 
 function App() {
+    console.log(window.getNodeList());
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     const [nodeTypes, setNodeTypes] = useState({
         start: StartNode,
         gaussian: NodeCreator,
-        uniform: NodeCreator,
+        erode: NodeCreator,
         addImage: AddImageNode
     });
     const [edgeTypes, setEdgeTypes] = useState({

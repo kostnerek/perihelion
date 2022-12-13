@@ -44,7 +44,8 @@
   },
   "electronmon": {
     "patterns": [
-      "!**/*.png"
+      "!**/*.png",
+      "!**/*.json"
     ]
   },
   "eslintConfig": {

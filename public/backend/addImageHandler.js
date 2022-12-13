@@ -21,9 +21,9 @@ const addImage = (workflow, id, path) => {
 
 const checkStatus = (workflow, id) => {
     const workdirPath = createWorkdir(workflow);
-    const file = workdirPath+"\\"+id+".png";
-    if (fs.existsSync(file) && fs.lstatSync(file).isFile()) {
-        return file;
+    const filePath = workdirPath+"\\"+id+".png";
+    if (fs.existsSync(filePath) && fs.lstatSync(filePath).isFile()) {
+        return filePath;
     }
     return false;
 }

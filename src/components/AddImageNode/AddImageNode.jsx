@@ -11,14 +11,14 @@ export default memo(({ id, data, isConnectable }) => {
     const handleClick = () => {
         inputRef.current.click();
     };
-    const [status, setStatus] = useState(() => {
-        const status = window.checkImageStatus({
+    const [imgStatus, setImgStatus] = useState(() => {
+        const filePath = window.checkImageStatus({
             workflow: workflow,
             id: id,
         });
-        if (status !== false) {
-            return status;
-        } else return "";
+        if (filePath !== false) {
+            return { ...filePath, status: filePath };
+        } else return { ...filePath, status: "" };
     });
 
     const handleFileChange = (event) => {
@@ -26,13 +26,13 @@ export default memo(({ id, data, isConnectable }) => {
         if (!fileObj) return;
         event.target.value = null;
         window.addImage({ workflow: workflow, id: id, path: fileObj.path });
-        const status = window.checkImageStatus({
+        const filePath = window.checkImageStatus({
             workflow: workflow,
             id: id,
         });
-        if (status !== false) {
-            setStatus(status);
-        } else setStatus("");
+        if (filePath !== false) {
+            setImgStatus({ ...filePath, status: filePath });
+        } else setImgStatus({ ...filePath, status: "" });
     };
 
     return (
@@ -57,9 +57,9 @@ export default memo(({ id, data, isConnectable }) => {
             />
             <div
                 className="image-status"
-                style={{ display: status ? "flex" : "none" }}
+                style={{ display: imgStatus ? "flex" : "none" }}
             >
-                <img src={status} alt="" />
+                <img src={imgStatus.status} alt="" />
             </div>
             <Handle
                 type="source"

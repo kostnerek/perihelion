@@ -47,7 +47,7 @@ const Menu = () => {
                     </div>
                     <div
                         className="menu-item"
-                        onClick={() => spawnNode("uniform")}
+                        onClick={() => spawnNode("erode")}
                     >
                         i
                     </div>
